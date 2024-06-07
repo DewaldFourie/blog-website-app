@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./errorPage";
 import Home from "./components/Home";
 import Posts from "./components/Posts";
+import PostView from "./components/PostView";
 import About from "./components/About";
 import Base from "./base";
 
@@ -16,6 +17,7 @@ const Router = () => {
             children: [
                 { path: "home", element: <Home /> },
                 { path: "posts", element: <Posts /> },
+                { path: "posts/:postId", element: <PostView /> },
                 { path: "about", element: <About /> },
             ],
         },

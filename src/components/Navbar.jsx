@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './styles/navbar.css';
 import { NavLink } from "react-router-dom";
 
 
@@ -59,5 +60,6 @@ const Navbar = () => {
         </nav>
     )
 }
+
 
 export default Navbar;

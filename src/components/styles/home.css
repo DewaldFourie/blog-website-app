@@ -4,11 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
 }
 
 .banner-container {
-    height: 70%;
+    height: 100vh;
     background-color: beige;
     width: 100%;
     display: flex;
@@ -28,9 +27,31 @@
 }
 
 .segment-1-container {
-    height: 30%;
     background-color: aqua;
     width: 100%;
-    display: flex;
-    justify-content: center;
+}
+
+.home-posts-container {
+    margin: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.home-post-item-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.item-1 {
+    grid-row: span 3;
+}
+
+.item-2 {
+    grid-row: span 2;
+}
+
+.item-3 {
+    grid-row: span 1;
 }

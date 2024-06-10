@@ -3,7 +3,34 @@
 .home-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.banner-container {
+    height: 70%;
+    background-color: beige;
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+}
+
+.banner-container-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+.banner-container-text {
+
+}
+
+.segment-1-container {
+    height: 30%;
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

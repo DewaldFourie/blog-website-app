@@ -5,5 +5,55 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 93.6vh;
+}
+
+.about-container {
+    margin: 4rem;
+    padding: 2rem;
+    background-color: rgb(42, 42, 42);
+    color: whitesmoke;
+}
+
+.about-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-project-layout-header {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-project-layout-container {
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.project-layout-item {
+    border: 1px solid;
+    width: 12rem;
+    height: 4rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-project-info-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-project-info-text {
+    text-align: center;
 }

@@ -1,11 +1,13 @@
-
+import './styles/about.css'
 
 
 const About = () => {
 
     return (
         <>
-            <h1>About</h1>
+            <div className="about-content">
+                <h1>About</h1>
+            </div>
         </>
     )
 }

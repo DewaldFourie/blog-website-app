@@ -1,10 +1,12 @@
-
+import './styles/posts.css'
 
 const Posts = () => {
 
     return (
         <>
-            <h1>Posts</h1>
+            <div className="posts-content">
+                <h1>Posts</h1>
+            </div>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './styles/home.css'
 
 
@@ -47,6 +47,12 @@ let mock_posts = [
 
 const Home = () => {
 
+    // useEffect(() => {
+    //     // scroll to the top when the component mounts
+    //     window.scrollTo(0, 0);
+    // }, []);
+
+
     const [data, setData] = useState(mock_posts);
 
     return (
@@ -62,13 +68,13 @@ const Home = () => {
                         {data.slice(0, 3).map((item, index) => (
                             <div key={index} className={`home-post-item-container item-${index + 1}`}>
                                 <h1>{item.title}</h1>
-                                <h2>{item.author}</h2>
+                                <h2>{item.author} | {item.createdAt}</h2>
                             </div>
                         ))
                         }
                     </div>
-                    <div>
-                        <span>See all Posts</span>
+                    <div className='home-posts-link-container'>
+                        <span className='home-posts-link'>See all Posts ➜</span>
                     </div>
                 </div>
             </div>        

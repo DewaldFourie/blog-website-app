@@ -32,7 +32,9 @@
 }
 
 .home-posts-container {
-    margin: 7rem;
+    margin-top: 7rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -42,6 +44,7 @@
 .home-post-item-container {
     border: 1px solid #ccc;
     padding: 15px;
+    border-radius: 12px;
 }
 
 .item-1 {
@@ -54,4 +57,20 @@
 
 .item-3 {
     grid-row: span 1;
+}
+
+.home-posts-link-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5rem;
+    margin-right: 8rem;
+    margin-top: 1rem;
+    height: 2rem;
+}
+
+.home-posts-link {
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 10px;
 }

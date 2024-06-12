@@ -1,9 +1,20 @@
+import './styles/postItem.css';
 
-const PostItem = () => {
+
+const PostItem = ({ post }) => {
+    
+
 
     return (
         <>
-            <h1>PostItem</h1>
+            <div className="post-item-container">
+                <div className="post-item-main">
+                    <h1>{post.title}</h1>
+                </div>
+                <div className="post-item-secondary">
+                        {post.author}
+                </div>
+            </div>
         </>
     )
 }

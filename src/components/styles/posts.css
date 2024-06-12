@@ -7,3 +7,31 @@
     align-items: center;
     min-height: 100vh;
 }
+
+.posts-block {
+    width: 90%;
+    margin-top: 125px;
+    margin-bottom: 125px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 80%;
+}
+
+.post-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

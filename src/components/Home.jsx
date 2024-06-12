@@ -47,10 +47,10 @@ let mock_posts = [
 
 const Home = () => {
 
-    // useEffect(() => {
-    //     // scroll to the top when the component mounts
-    //     window.scrollTo(0, 0);
-    // }, []);
+    useEffect(() => {
+        // scroll to the top when the component mounts
+        window.scrollTo(0, 0);
+    }, []);
 
 
     const [data, setData] = useState(mock_posts);

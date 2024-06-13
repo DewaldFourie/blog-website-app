@@ -1,5 +1,6 @@
 import './styles/posts.css'
 import PostItem from './PostItem'
+import { Link } from 'react-router-dom'
 
 // Mock data of posts for development and testing purposes
 let mock_posts = [
@@ -96,7 +97,9 @@ const Posts = () => {
                         {
                             mock_posts.map((post) => (
                                 <div className="post-item" key={post.id}>
-                                    <PostItem key={post.id} post={post}/>
+                                    <Link to={`/posts/${post.id}`}>
+                                        <PostItem key={post.id} post={post}/>
+                                    </Link>
                                 </div>
                             ))
                         }

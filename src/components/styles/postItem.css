@@ -14,3 +14,9 @@
 .post-item-main {
     height: 10rem;
 }
+
+.post-item-secondary {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

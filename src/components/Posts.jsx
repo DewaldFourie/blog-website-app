@@ -10,7 +10,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     },
     {
         id: 2,
@@ -19,7 +20,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     },
     {
         id: 4,
@@ -37,7 +40,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     },
     {
         id: 5,
@@ -46,7 +50,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     },
     {
         id: 6,
@@ -55,7 +60,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     },
     {
         id: 7,
@@ -64,7 +70,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     },
     {
         id: 8,
@@ -73,7 +80,8 @@ let mock_posts = [
         author: "test Author",
         likes: 0,
         published: true,
-        createdAt: '2024-06-03T13:02:04.530+00:00'
+        createdAt: '2024-06-03',
+        comments: 3,
     }
 ]
 

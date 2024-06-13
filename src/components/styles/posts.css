@@ -35,3 +35,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.post-link-posts {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,6 +1,7 @@
 import './styles/posts.css'
 import PostItem from './PostItem'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 // Mock data of posts for development and testing purposes
 let mock_posts = [
@@ -89,6 +90,11 @@ let mock_posts = [
 
 const Posts = () => {
 
+    useEffect(() => {
+        // scroll to the top when the component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <div className="posts-content">
@@ -97,7 +103,7 @@ const Posts = () => {
                         {
                             mock_posts.map((post) => (
                                 <div className="post-item" key={post.id}>
-                                    <Link to={`/posts/${post.id}`}>
+                                    <Link className='post-link-posts' to={`/posts/${post.id}`}>
                                         <PostItem key={post.id} post={post}/>
                                     </Link>
                                 </div>

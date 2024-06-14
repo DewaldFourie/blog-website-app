@@ -2,7 +2,200 @@
 .postView-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
+
+.postView-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    background-color: rgb(221, 226, 231);
+    width: 90%;
+}
+
+/*  MAIN CONTAINER  */
+
+.postView-main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    width: 80%;
+}
+
+.postView-main-title-container {
+    display: flex;
+}
+
+.postView-main-title-text {
+    color: rgb(30, 17, 167);
+}
+
+.postView-main-info-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.postView-main-info-data-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.postView-main-info-data-author {
+
+}
+
+.postView-main-info-data-date {
+
+}
+
+.postView-main-info-like-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.postView-main-info-like-btn {
+    font-size: 25px;
+}
+
+.postView-main-info-like-text {
+
+}
+
+.postView-main-text-container {
+    padding: 5px;
+}
+
+.postView-main-text {
+
+}
+
+/* BREAK */
+
+.postView-container-break {
+    height: 1px;
+    border-top: 4px solid;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* SECONDARY CONTAINER */
+
+.postView-secondary-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.postView-comments-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postView-comments-input-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 5px;
+}
+
+.postView-comments-input-header {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.comment-username {
+
+}
+
+.comment-content {
+    height: 50px;
+}
+
+.comment-submit-btn {
+    width: 125px;
+    align-self: flex-end;
+}
+
+.postView-comments-break {
+    height: 1px;
+    border-top: 1px solid;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.postView-comments-content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.postView-comments-comment-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.postView-comment-favicon-container {
+    display: flex;
+    justify-content: center;
+}
+
+.postView-comment-favicon {
+
+}
+
+.postView-comment-data-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.postView-comment-info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.postView-comment-info-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.postView-comment-info-author {
+    margin: 2px;
+}
+
+.postView-comment-info-date {
+    margin: 0;
+    font-size: small;
+}
+
+.postView-comment-info-like-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.postView-comment-info-like-btn {
+
+}
+
+.postView-comment-info-like-text {
+    font-size: small;
+}
+
+.postView-comment-content-container {
+    display: flex;
+}
+
+.postView-comment-content-text {
+
+}
+

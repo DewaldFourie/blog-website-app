@@ -13,7 +13,26 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [
+            {
+                author: "John Doe",
+                text: "nice man",
+                date: "2024-06-04",
+                likes: 2,
+            },
+            {
+                author: "Mary Min",
+                text: "Well done",
+                date: "2024-06-05",
+                likes: 7,
+            },
+            {
+                author: "Phill Pill",
+                text: "this is amazing dude",
+                date: "2024-06-11",
+                likes: 12,
+            },
+        ]
     },
     {
         id: 2,
@@ -23,7 +42,14 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [
+            {
+                author: "John Doe",
+                text: "nice man",
+                date: "2024-06-04",
+                likes: 2,
+            },
+        ]
     },
     {
         id: 3,
@@ -33,7 +59,7 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [],
     },
     {
         id: 4,
@@ -43,7 +69,7 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [],
     },
     {
         id: 5,
@@ -53,7 +79,7 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [],
     },
     {
         id: 6,
@@ -63,7 +89,7 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [],
     },
     {
         id: 7,
@@ -73,7 +99,7 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [],
     },
     {
         id: 8,
@@ -83,7 +109,7 @@ let mock_posts = [
         likes: 0,
         published: true,
         createdAt: '2024-06-03',
-        comments: 3,
+        comments: [],
     }
 ]
 

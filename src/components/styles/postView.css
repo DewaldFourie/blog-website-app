@@ -4,14 +4,35 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    
 }
+
+.postView-return-container {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    display: block;
+    border: 1px solid;
+    border-radius: 10px;
+    
+}
+
+.postView-return-scrollMax-container {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    display: block;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
 
 .postView-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     background-color: rgb(221, 226, 231);
     width: 90%;
 }
@@ -89,6 +110,8 @@
 .postView-secondary-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -96,6 +119,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .postView-comments-input-form {
@@ -134,11 +158,14 @@
 .postView-comments-content-container {
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .postView-comments-comment-container {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    border-bottom: solid 1px;
+    margin-bottom: 1rem;
 }
 
 .postView-comment-favicon-container {
@@ -147,7 +174,14 @@
 }
 
 .postView-comment-favicon {
-
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: whitesmoke;
 }
 
 .postView-comment-data-container {

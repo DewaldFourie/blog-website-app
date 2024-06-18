@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import './styles/postView.css'
+import { useState, useEffect } from "react";
 
 let mock_posts = [
     {
         id: 1,
         title: "test 1",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
         author: "test Author",
         likes: 0,
         published: true,
@@ -114,15 +115,54 @@ let mock_posts = [
 
 const PostView = () => {
 
+    const [showReturnButton, setShowReturnButton] = useState(false);
+    const [isScrolledToMax, setIsScrolledToMax] = useState(false);
+
+    useEffect(() => {
+
+        window.scrollTo(0, 0);
+        
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
+
+            if (scrollTop > 20) {
+                setShowReturnButton(true);
+            } else {
+                setShowReturnButton(false);
+            }
+
+            if (scrollTop >= maxScrollTop - 10) {
+                setIsScrolledToMax(true);
+            } else {
+                setIsScrolledToMax(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+
+    }, []);
+
     const { postId } = useParams();
 
     // Fetch th post using postId (Do this with an AOI fetch call for real data with an error message also)
     const post = mock_posts.find(post => post.id === parseInt(postId));
 
 
+
+
     return (
         <>
             <div className="postView-content">
+                { showReturnButton && (
+                    <div className={!isScrolledToMax ? `postView-return-container` : `postView-return-scrollMax-container`}>
+                        <span className="postView-return-btn">⬅︎ Back to All Posts</span>
+                    </div>
+                )} 
                 <div className="postView-container">
                     {post ? (
                         <>
@@ -156,10 +196,11 @@ const PostView = () => {
                             </div>
                             <div className="postView-comments-break"></div>
                             <div className="postView-comments-content-container">
-                                {post.comments.map((comment, index) => (
+                                {post.comments.map((comment, index) => {
+                                    return (
                                     <div key={index} className="postView-comments-comment-container">
                                         <div className="postView-comment-favicon-container">
-                                            <img className="postView-comment-favicon" src="#" alt="Favicon" />
+                                            <span className="postView-comment-favicon">{comment.author.slice(0,1)}</span>  
                                         </div>
                                         <div className="postView-comment-data-container">
                                             <div className="postView-comment-info-container">
@@ -177,8 +218,11 @@ const PostView = () => {
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                )})}
                             </div>
+                        </div>
+                        <div className="postView-footer-container">
+
                         </div>
                         </>
                     ) : (

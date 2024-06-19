@@ -15,14 +15,13 @@ const PostItem = ({ post }) => {
                 </div>
                 <div className="post-item-secondary">
                     <div className="post-item-secondary-left">
-                        <span>{post.author}</span> 
+                        <span>{post.author.username}</span> 
                         <span> | </span>
-                        <span>{post.createdAt}</span>
+                        <span>{new Date(post.createdAt).toLocaleString()}</span>
                     </div>
                     <div className="post-item-secondary-right">
                         <span>♥️ {post.likes}</span>
                         <span> | </span>
-                        <span>📜 {post.comments.length} </span>
                     </div>
                 </div>
             </div>

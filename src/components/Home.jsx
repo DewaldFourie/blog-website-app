@@ -115,17 +115,38 @@ let mock_posts = [
 ]
 
 
+// Function to fetch posts, this will fecth the last 3 post by using the correct route
+const fetchPosts = async () => {
+    try {
+        const response = await fetch("https://blog-api-app.fly.dev/posts/last/3", { mode: 'cors' });
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data.posts;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 
 
 const Home = () => {
 
+    const [posts, setPosts] = useState([]);
+
     useEffect(() => {
         // scroll to the top when the component mounts
         window.scrollTo(0, 0);
+
+        const loadPosts = async () => {
+            const fetchedPosts = await fetchPosts();
+            setPosts(fetchedPosts);
+        }
+        loadPosts()
     }, []);
 
 
-    const [data, setData] = useState(mock_posts);
 
     return (
         <>
@@ -137,11 +158,11 @@ const Home = () => {
                 </div>
                 <div className="segment-1-container">
                     <div className='home-posts-container'>
-                        {data.slice(0, 3).map((post, index) => (
+                        {posts.map((post, index) => (
                             <div key={index} className={`home-post-item-container item-${index + 1}`}>
-                                <Link className='post-link-home' to={`/posts/${post.id}`}>
+                                <Link className='post-link-home' to={`/posts/${post._id}`}>
                                     <h1>{post.title}</h1>
-                                    <h2>{post.author} | {post.createdAt}</h2>
+                                    <h2>{post.author.username} | {new Date(post.createdAt).toLocaleString()}</h2>
                                 </Link>
                             </div>
                         ))

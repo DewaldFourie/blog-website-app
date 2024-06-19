@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import './styles/postView.css'
 import { useState, useEffect } from "react";
 
@@ -111,17 +111,49 @@ let mock_posts = [
     }
 ]
 
+// Function to fetch posts, this will fecth the correct individual post by using ID
+const fetchPost = async (post_id) => {
+    try {
+        const response = await fetch(`https://blog-api-app.fly.dev/posts/${post_id}`, { mode: 'cors' });
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        const post = data.post;
+        const comments = data.comments;
+        return {post, comments};
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
 const PostView = () => {
-
+    const [post, setPost] = useState()
+    const [comments, setComments] = useState([])
     const [showReturnButton, setShowReturnButton] = useState(false);
     const [isScrolledToMax, setIsScrolledToMax] = useState(false);
 
+    // get the postID from the params of the API routes
+    const { postId } = useParams();
+
+
+    const handleToTop = () => {
+        window.scrollTo(0, 0);
+    }
+
+
     useEffect(() => {
 
-        window.scrollTo(0, 0);
-        
+        const loadPost = async (post_id) => {
+            const fetchedPost = await fetchPost(post_id);
+            setPost(fetchedPost.post)
+            setComments(fetchedPost.comments)
+        }
+        loadPost(postId)
+
+        handleToTop();
+
         const handleScroll = () => {
             const scrollTop = window.scrollY;
             const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
@@ -145,13 +177,7 @@ const PostView = () => {
         };
 
 
-    }, []);
-
-    const { postId } = useParams();
-
-    // Fetch th post using postId (Do this with an AOI fetch call for real data with an error message also)
-    const post = mock_posts.find(post => post.id === parseInt(postId));
-
+    }, [postId]);
 
 
 
@@ -159,9 +185,9 @@ const PostView = () => {
         <>
             <div className="postView-content">
                 { showReturnButton && (
-                    <div className={!isScrolledToMax ? `postView-return-container` : `postView-return-scrollMax-container`}>
+                    <Link className={!isScrolledToMax ? `postView-return-container` : `postView-return-scrollMax-container` } to={'/posts'}>
                         <span className="postView-return-btn">⬅︎ Back to All Posts</span>
-                    </div>
+                    </Link>
                 )} 
                 <div className="postView-container">
                     {post ? (
@@ -172,7 +198,7 @@ const PostView = () => {
                             </div>
                             <div className="postView-main-info-container">
                                 <div className="postView-main-info-data-container">
-                                    <span className="postView-main-info-data-author">{post.author}</span>
+                                    <span className="postView-main-info-data-author">{post.author.username}</span>
                                     <span className="postView-main-info-data-date">{post.createdAt}</span>
                                 </div>
                                 <div className="postView-main-info-like-container">
@@ -196,7 +222,7 @@ const PostView = () => {
                             </div>
                             <div className="postView-comments-break"></div>
                             <div className="postView-comments-content-container">
-                                {post.comments.map((comment, index) => {
+                                {comments.map((comment, index) => {
                                     return (
                                     <div key={index} className="postView-comments-comment-container">
                                         <div className="postView-comment-favicon-container">
@@ -206,7 +232,7 @@ const PostView = () => {
                                             <div className="postView-comment-info-container">
                                                 <div className="postView-comment-info-text-container">
                                                     <h4 className="postView-comment-info-author">{comment.author}</h4>
-                                                    <span className="postView-comment-info-date">{comment.date}</span>
+                                                    <span className="postView-comment-info-date">{comment.createdAt}</span>
                                                 </div>
                                                 <div className="postView-comment-info-like-container">
                                                     <span className="postView-comment-info-like-btn">♥️</span>
@@ -222,7 +248,7 @@ const PostView = () => {
                             </div>
                         </div>
                         <div className="postView-footer-container">
-
+                            <button className="postView-footer-btn"  onClick={handleToTop}>To Top ⬆︎</button>
                         </div>
                         </>
                     ) : (

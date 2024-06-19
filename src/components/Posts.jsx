@@ -1,7 +1,7 @@
 import './styles/posts.css'
 import PostItem from './PostItem'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Link, useLoaderData } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 // Mock data of posts for development and testing purposes
 let mock_posts = [
@@ -114,11 +114,34 @@ let mock_posts = [
 ]
 
 
+// Function to fetch posts
+const fetchPosts = async () => {
+    try {
+        const response = await fetch("https://blog-api-app.fly.dev/posts/", { mode: 'cors' });
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data.posts;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
 const Posts = () => {
+    const [posts, setPosts] = useState([]);
+
 
     useEffect(() => {
         // scroll to the top when the component mounts
         window.scrollTo(0, 0);
+    
+        const loadPosts = async () => {
+            const fetchedPosts = await fetchPosts();
+            setPosts(fetchedPosts);
+        }
+        loadPosts();    
     }, []);
 
     return (
@@ -127,13 +150,16 @@ const Posts = () => {
                 <div className="posts-block">
                     <div className='posts-container'>
                         {
-                            mock_posts.map((post) => (
-                                <div className="post-item" key={post.id}>
-                                    <Link className='post-link-posts' to={`/posts/${post.id}`}>
-                                        <PostItem key={post.id} post={post}/>
+                            posts.length === 0 ? (
+                                <p>Loading posts...</p>
+                            ) : (
+                            posts.map((post) => (
+                                <div className="post-item" key={post._id}>
+                                    <Link className='post-link-posts' to={`/posts/${post._id}`}>
+                                        <PostItem key={post._id} post={post}/>
                                     </Link>
                                 </div>
-                            ))
+                            )))
                         }
                     </div>
                 </div>

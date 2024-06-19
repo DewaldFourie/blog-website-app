@@ -7,24 +7,25 @@
     
 }
 
-.postView-return-container {
+.postView-return-container, .postView-return-scrollMax-container {
     position: fixed;
     right: 20px;
-    bottom: 50px;
     display: block;
     border: 1px solid;
     border-radius: 10px;
-    
+    background-color: black;
+    color: whitesmoke;
+    transition: bottom 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.postView-return-container {
+    bottom: 50px;
 }
 
 .postView-return-scrollMax-container {
-    position: fixed;
-    right: 20px;
     bottom: 80px;
-    display: block;
-    border: 1px solid;
-    border-radius: 10px;
 }
+
 
 
 .postView-container {
@@ -233,3 +234,22 @@
 
 }
 
+.postView-footer-container {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50%;
+padding: 20px;
+}
+
+.postView-footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    border-radius: 25px;   
+}
+
+.postView-footer-btn:hover{
+    cursor: pointer;
+}

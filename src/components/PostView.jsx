@@ -129,8 +129,9 @@ const fetchPost = async (post_id) => {
 
 
 const PostView = () => {
-    const [post, setPost] = useState()
-    const [comments, setComments] = useState([])
+    const [post, setPost] = useState();
+    const [comments, setComments] = useState([]);
+    const [newComment, setNewComment] = useState({ author: '', text: '' });
     const [showReturnButton, setShowReturnButton] = useState(false);
     const [isScrolledToMax, setIsScrolledToMax] = useState(false);
 
@@ -142,7 +143,7 @@ const PostView = () => {
         window.scrollTo(0, 0);
     }
 
-
+    // useEffect hook to render on page load and postId change as dependancy
     useEffect(() => {
 
         const loadPost = async (post_id) => {
@@ -176,8 +177,41 @@ const PostView = () => {
             window.removeEventListener('scroll', handleScroll);
         };
 
-
     }, [postId]);
+
+    // function to handle the input change of the comment form
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setNewComment({ ...newComment, [name]: value });
+    }
+
+    // function to handlethe submit of the form and to Post the new comment to the database if successful;
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(`https://blog-api-app.fly.dev/posts/${postId}/comment`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newComment),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                if (result.result === 'done') {
+                    // Add new comment to the comments list
+                    setComments([...comments, newComment]);
+                    // clear the form 
+                    setNewComment({ author: '', text: '' })
+                }
+            } else  {
+                console.log('Error posting comment.');
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
 
 
@@ -213,10 +247,25 @@ const PostView = () => {
                         <div className="postView-container-break"></div>
                         <div className="postView-secondary-container">
                             <div className="postView-comments-input-container">
-                                <form className="postView-comments-input-form" id="comment-input" action="post">
+                                <form className="postView-comments-input-form" id="comment-input" action="post" onSubmit={handleSubmit}>
                                     <span className="postView-comments-input-header">Add a Comment</span>
-                                    <input name="comment-username" id="comment-input" type="text" className="comment-username" placeholder="Username"/>
-                                    <textarea name="comment-content" id="comment-input" className="comment-content" placeholder="Comment"></textarea>
+                                    <input 
+                                        name="author" 
+                                        id="comment-input" 
+                                        type="text" 
+                                        className="comment-username" 
+                                        placeholder="Username" 
+                                        value={newComment.author} 
+                                        onChange={handleInputChange}
+                                    />
+                                    <textarea 
+                                        name="text" 
+                                        id="comment-input" 
+                                        className="comment-content" 
+                                        placeholder="Comment"
+                                        value={newComment.text}
+                                        onChange={handleInputChange}
+                                        ></textarea>
                                     <input className="comment-submit-btn" type="submit" value="Post Comment" />
                                 </form>
                             </div>
@@ -252,7 +301,7 @@ const PostView = () => {
                         </div>
                         </>
                     ) : (
-                        <span>Post not found.</span>
+                        <span>loading post...</span>
                     )}
                 </div>
             </div>

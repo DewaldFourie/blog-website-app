@@ -148,20 +148,24 @@ const Posts = () => {
         <>
             <div className="posts-content">
                 <div className="posts-block">
-                    <div className='posts-container'>
+                    
                         {
                             posts.length === 0 ? (
-                                <p>Loading posts...</p>
-                            ) : (
-                            posts.map((post) => (
-                                <div className="post-item" key={post._id}>
-                                    <Link className='post-link-posts' to={`/posts/${post._id}`}>
-                                        <PostItem key={post._id} post={post}/>
-                                    </Link>
+                                <div className='loading-container'>
+                                    <p>Loading posts...</p>
                                 </div>
-                            )))
+                            ) : (
+                                <div className='posts-container'>
+                                    {posts.map((post) => (
+                                        <div className="post-item" key={post._id}>
+                                            <Link className='post-link-posts' to={`/posts/${post._id}`}>
+                                                <PostItem key={post._id} post={post}/>
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </div>
+                                )
                         }
-                    </div>
                 </div>
             </div>
         </>

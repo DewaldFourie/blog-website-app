@@ -1,115 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import './styles/postView.css'
 import { useState, useEffect } from "react";
+import generateUniqueId from "../lib/userIdUtils";
+import heartInitial from '../assets/heart-initial.png';
+import heartActive from '../assets/heart-active.png';
 
-let mock_posts = [
-    {
-        id: 1,
-        title: "test 1",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [
-            {
-                author: "John Doe",
-                text: "nice man",
-                date: "2024-06-04",
-                likes: 2,
-            },
-            {
-                author: "Mary Min",
-                text: "Well done",
-                date: "2024-06-05",
-                likes: 7,
-            },
-            {
-                author: "Phill Pill",
-                text: "this is amazing dude",
-                date: "2024-06-11",
-                likes: 12,
-            },
-        ]
-    },
-    {
-        id: 2,
-        title: "test 2",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [
-            {
-                author: "John Doe",
-                text: "nice man",
-                date: "2024-06-04",
-                likes: 2,
-            },
-        ]
-    },
-    {
-        id: 3,
-        title: "test 3",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 4,
-        title: "test 4",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 5,
-        title: "test 5",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 6,
-        title: "test 6",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 7,
-        title: "test 7",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 8,
-        title: "test 8",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    }
-]
+
+
 
 // Function to fetch posts, this will fecth the correct individual post by using ID
 const fetchPost = async (post_id) => {
@@ -128,12 +25,107 @@ const fetchPost = async (post_id) => {
 };
 
 
+// Function to check if a user has liked a post
+const checkIfLiked = async (post_id) => {
+    // fetch the userID from local storage
+    let userId = localStorage.getItem('x-user-id');
+    // check to see if there is a user ID in local storage
+    // if not, create a new one and store it
+    if (!userId) {
+        userId = generateUniqueId();
+        localStorage.setItem('x-user-id', userId);
+    }
+
+    try {
+        const response = await fetch(`https://blog-api-app.fly.dev/posts/${post_id}/liked`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-user-id': userId
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`)
+        }
+
+        const data = await response.json();
+        return data.liked;
+    } catch (error){
+        console.log('Error checking if liked: ', error);
+    }
+} 
+
+
+// Function to fetch request a like on a post
+const likePost = async (post_id) => {
+    // fetch the userID from local storage
+    let userId = localStorage.getItem('x-user-id');
+    // check to see if there is a user ID in local storage
+    // if not, create a new one and store it
+    if (!userId) {
+        userId = generateUniqueId();
+        localStorage.setItem('x-user-id', userId);
+    }
+
+    try {
+        const response = await fetch(`https://blog-api-app.fly.dev/posts/${post_id}/like`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-user-id': userId
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log('Error liking post: ', error);
+    }
+}
+
+
+// Function to request an unlike on a post
+const unlikePost = async (post_id) => {
+    let userId = localStorage.getItem('x-user-id');
+    if (!userId) {
+        userId = generateUniqueId();
+        localStorage.setItem('x-user-id', userId);
+    }
+
+    try {
+        const response = await fetch(`https://blog-api-app.fly.dev/posts/${post_id}/unlike`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-user-id': userId
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log('Error unliking post: ', error);
+    }
+};
+
+
+
 const PostView = () => {
     const [post, setPost] = useState();
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState({ author: '', text: '' });
     const [showReturnButton, setShowReturnButton] = useState(false);
     const [isScrolledToMax, setIsScrolledToMax] = useState(false);
+    const [liked, setLiked] = useState(false);
 
     // get the postID from the params of the API routes
     const { postId } = useParams();
@@ -150,6 +142,8 @@ const PostView = () => {
             const fetchedPost = await fetchPost(post_id);
             setPost(fetchedPost.post)
             setComments(fetchedPost.comments)
+            const isLiked = await checkIfLiked(post_id);
+            setLiked(isLiked);
         }
         loadPost(postId)
 
@@ -213,6 +207,27 @@ const PostView = () => {
         }
     };
 
+    // function to toggle between like and unlike of posts by a user
+    const handleLikeClick = async (postId) => {
+        if (liked) {
+            const result = await unlikePost(postId);
+            if (result && result.result === 'done') {
+                setPost((prevPost) => ({ ...prevPost, likes: prevPost.likes - 1 }));
+                setLiked(false);
+            } else {
+                console.log('Failed to unlike post:');
+            }
+        } else {
+            const result = await likePost(postId);
+            if (result && result.result === 'done') {
+                setPost((prevPost) => ({ ...prevPost, likes: prevPost.likes + 1 }));
+                setLiked(true);
+            } else {
+                console.log('Failed to like post:');
+            }
+        }
+    };
+    
 
 
     return (
@@ -236,7 +251,7 @@ const PostView = () => {
                                     <span className="postView-main-info-data-date">{post.createdAt}</span>
                                 </div>
                                 <div className="postView-main-info-like-container">
-                                    <span className="postView-main-info-like-btn">♥️</span>
+                                    <img src={liked ? heartActive : heartInitial} id="heart" className={`postView-main-info-like-btn ${liked ? 'active' : 'initial'}`} onClick={() => handleLikeClick(post._id)}></img>
                                     <span className="postView-main-info-like-text">{post.likes}</span> 
                                 </div>
                             </div>
@@ -310,3 +325,4 @@ const PostView = () => {
 }
 
 export default PostView;
+

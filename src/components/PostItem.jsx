@@ -21,7 +21,6 @@ const PostItem = ({ post }) => {
                     </div>
                     <div className="post-item-secondary-right">
                         <span>♥️ {post.likes}</span>
-                        <span> | </span>
                     </div>
                 </div>
             </div>

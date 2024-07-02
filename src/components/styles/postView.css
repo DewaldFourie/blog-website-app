@@ -76,17 +76,31 @@
 
 .postView-main-info-like-container {
     display: flex;
-    gap: 10px;
+    gap: 3px;
     justify-content: center;
     align-items: center;
 }
 
 .postView-main-info-like-btn {
-    font-size: 25px;
+    height: 25px;
+    width: 25px;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.postView-main-info-like-btn:hover {
+    cursor: pointer;
+}
+
+.postView-main-info-like-btn.active {
+    opacity: 1;
+}
+
+.postView-main-info-like-btn.initial {
+    opacity: 0.5;
 }
 
 .postView-main-info-like-text {
-
+    align-self: flex-end;
 }
 
 .postView-main-text-container {

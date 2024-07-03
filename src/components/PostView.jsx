@@ -298,10 +298,6 @@ const PostView = () => {
                                                     <h4 className="postView-comment-info-author">{comment.author}</h4>
                                                     <span className="postView-comment-info-date">{comment.createdAt}</span>
                                                 </div>
-                                                <div className="postView-comment-info-like-container">
-                                                    <span className="postView-comment-info-like-btn">♥️</span>
-                                                    <span className="postView-comment-info-like-text">{comment.likes}</span> 
-                                                </div>
                                             </div>
                                             <div className="postView-comment-content-container">
                                                 <p className="postView-comment-content-text">{comment.text}</p>

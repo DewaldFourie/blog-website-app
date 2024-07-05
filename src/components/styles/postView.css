@@ -36,6 +36,7 @@
     margin-bottom: 5rem;
     background-color: rgb(221, 226, 231);
     width: 90%;
+    min-height: 75vh;
 }
 
 /*  MAIN CONTAINER  */
@@ -266,4 +267,19 @@ padding: 20px;
 
 .postView-footer-btn:hover{
     cursor: pointer;
+}
+
+/* Loading container */
+
+.loading-post-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+}
+
+.loading-post-text {
+
 }

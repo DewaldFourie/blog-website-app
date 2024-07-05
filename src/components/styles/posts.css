@@ -1,5 +1,3 @@
-
-
 .posts-content {
     display: flex;
     flex-direction: column;
@@ -22,18 +20,16 @@
 
 .posts-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax value to your requirement */
     gap: 15px;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     padding: 2rem;
-    width: 80%;
+    width: 100%;
 }
 
 .loading-container {
     display: flex;
-    
 }
 
 .post-item {

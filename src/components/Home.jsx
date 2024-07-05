@@ -162,7 +162,7 @@ const Home = () => {
                             <div key={index} className={`home-post-item-container item-${index + 1}`}>
                                 <Link className='post-link-home' to={`/posts/${post._id}`}>
                                     <h1>{post.title}</h1>
-                                    <h2>{post.author.username} | {new Date(post.createdAt).toLocaleString()}</h2>
+                                    <h2>{post.author.username} | {new Date(post.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</h2>
                                 </Link>
                             </div>
                         ))

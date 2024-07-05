@@ -8,7 +8,7 @@ import heartActive from '../assets/heart-active.png';
 
 
 
-// Function to fetch posts, this will fecth the correct individual post by using ID
+// Function to fetch posts, this will fetch the correct individual post by using ID
 const fetchPost = async (post_id) => {
     try {
         const response = await fetch(`https://blog-api-app.fly.dev/posts/${post_id}`, { mode: 'cors' });
@@ -248,7 +248,12 @@ const PostView = () => {
                             <div className="postView-main-info-container">
                                 <div className="postView-main-info-data-container">
                                     <span className="postView-main-info-data-author">{post.author.username}</span>
-                                    <span className="postView-main-info-data-date">{post.createdAt}</span>
+                                    <span className="postView-main-info-data-date">{new Date(post.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</span>
+                                    <span className="postView-main-info-data-time">{new Date(post.createdAt).toLocaleTimeString('en-GB', {
+                                        hour: '2-digit',
+                                        minute: '2-digit',
+                                        hour12: false
+                                    })}</span>
                                 </div>
                                 <div className="postView-main-info-like-container">
                                     <img src={liked ? heartActive : heartInitial} id="heart" className={`postView-main-info-like-btn ${liked ? 'active' : 'initial'}`} onClick={() => handleLikeClick(post._id)}></img>
@@ -312,7 +317,9 @@ const PostView = () => {
                         </div>
                         </>
                     ) : (
-                        <span>loading post...</span>
+                        <div className="loading-post-container">
+                            <span className="loading-post-text">loading post...</span>
+                        </div>
                     )}
                 </div>
             </div>

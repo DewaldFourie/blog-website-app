@@ -33,7 +33,7 @@ const Navbar = () => {
         <nav className={`navbar ${isNavbarSticky ? 'sticky' : ''} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
             <div className="container">
                 <div className={`brand-name ${isNavbarSticky ? 'sticky' : ''}`}>
-                    <NavLink to="/home">TITLE</NavLink>
+                    <NavLink to="/home">TravelBLOG</NavLink>
                 </div>
                 <div className={`nav-links ${isMobileMenuOpen ? 'mobile' : '' } ${isNavbarSticky ? 'sticky' : ''}`}>
                     <NavLink to="/home" exact activeClassName="active" onClick={toggleMobileMenu}>
@@ -52,8 +52,8 @@ const Navbar = () => {
                     <div className="bar"></div>
                 </div>
                 <div>
-                    <div>
-                        <span>PROFILE</span>
+                    <div className="admin-site-container">
+                        <span className="admin-site-login-text">Admin Login</span>
                     </div>
                 </div>
             </div>

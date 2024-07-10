@@ -10,7 +10,13 @@ const PostItem = ({ post }) => {
         <>
             <div className="post-item-container">
                 <div className="post-item-main">
-                    <h1>{post.title}</h1>
+                    <h1 className='post-item-main-title'>{post.title}</h1>
+                </div>
+                <div className='post-item-text-container'>
+                    <span className='post-item-text-small'>{post.text.slice(0, 150) + "..." + " " + "[Click to read more]"}</span>
+                </div>
+                <div className="post-item-image-container">
+                    <img className='post-item-image' src={post.imageURL} alt="post-image" />
                 </div>
                 <div className="post-item-secondary">
                     <div className="post-item-secondary-left">

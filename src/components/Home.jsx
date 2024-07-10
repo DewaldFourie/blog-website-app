@@ -2,120 +2,7 @@ import { useEffect, useState } from 'react';
 import './styles/home.css'
 import { Link } from 'react-router-dom';
 
-
-
-// Mock data of posts for development and testing purposes
-let mock_posts = [
-    {
-        id: 1,
-        title: "test 1",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [
-            {
-                author: "John Doe",
-                text: "nice man",
-                date: "2024-06-04",
-                likes: 2,
-            },
-            {
-                author: "Mary Min",
-                text: "Well done",
-                date: "2024-06-05",
-                likes: 7,
-            },
-            {
-                author: "Phill Pill",
-                text: "this is amazing dude",
-                date: "2024-06-11",
-                likes: 12,
-            },
-        ]
-    },
-    {
-        id: 2,
-        title: "test 2",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [
-            {
-                author: "John Doe",
-                text: "nice man",
-                date: "2024-06-04",
-                likes: 2,
-            },
-        ]
-    },
-    {
-        id: 3,
-        title: "test 3",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 4,
-        title: "test 4",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 5,
-        title: "test 5",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 6,
-        title: "test 6",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 7,
-        title: "test 7",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    },
-    {
-        id: 8,
-        title: "test 8",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        author: "test Author",
-        likes: 0,
-        published: true,
-        createdAt: '2024-06-03',
-        comments: [],
-    }
-]
-
-
-// Function to fetch posts, this will fecth the last 3 post by using the correct route
+// Function to fetch posts, this will fetch the last 3 posts using the correct route
 const fetchPosts = async () => {
     try {
         const response = await fetch("https://blog-api-app.fly.dev/posts/last/3", { mode: 'cors' });
@@ -128,8 +15,6 @@ const fetchPosts = async () => {
         console.log(error);
     }
 };
-
-
 
 const Home = () => {
 
@@ -146,8 +31,6 @@ const Home = () => {
         loadPosts()
     }, []);
 
-
-
     return (
         <>
             <div className="home-content">
@@ -158,15 +41,27 @@ const Home = () => {
                 </div>
                 <div className="segment-1-container">
                     <div className='home-posts-container'>
-                        {posts.map((post, index) => (
-                            <div key={index} className={`home-post-item-container item-${index + 1}`}>
-                                <Link className='post-link-home' to={`/posts/${post._id}`}>
-                                    <h1>{post.title}</h1>
-                                    <h2>{post.author.username} | {new Date(post.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</h2>
-                                </Link>
-                            </div>
-                        ))
-                        }
+                        {posts.map((post, index) => {
+                            if (!post.imageURL) {
+                                console.error(`Post at index ${index} does not have a valid imageURL`, post);
+                            }
+                            return (
+                                <div 
+                                    key={index} 
+                                    className={`home-post-item-container item-${index + 1}`} 
+                                >
+                                    <Link className='post-link-home' to={`/posts/${post._id}`}>
+                                        {post.imageURL && (
+                                            <img className='home-post-image' src={post.imageURL} alt="" /> 
+                                        )}
+                                        <div className='home-post-overlay'>
+                                            <h1 className='home-post-title'>{post.title}</h1>
+                                            <h2 className='home-post-author-and-date'>{post.author.username} | {new Date(post.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</h2>
+                                        </div>
+                                    </Link>
+                                </div>
+                            );
+                        })}
                     </div>
                     <div className='home-posts-link-container'>
                         <Link className='home-posts-link-reset' to={'/posts'}>

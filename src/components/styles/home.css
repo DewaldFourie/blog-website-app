@@ -1,5 +1,3 @@
-
-
 .home-content {
     display: flex;
     flex-direction: column;
@@ -7,12 +5,17 @@
 }
 
 .banner-container {
-    height: 90vh;
-    background-color: beige;
+    height: 100vh;
     width: 100%;
+    background-image: url(https://gtwallpaper.org/sites/default/files/wallpaper/243629/water-nature-wallpapers-243629-2096976-434566.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white; /* Optional: to make text visible over the image */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7); /* Optional: text shadow for better readability */
 }
 
 .banner-container-info {
@@ -22,12 +25,10 @@
     height: 10%;
 }
 
-.banner-container-text {
-
-}
-
 .segment-1-container {
-    background-color: aqua;
+    background-image: url(/src/assets/segment-1-background.jpg);
+    background-size: cover;
+    background-position: center;
     width: 100%;
 }
 
@@ -37,14 +38,16 @@
     margin-right: 7rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 180px 180px 180px;
     gap: 15px;
 }
 
 .home-post-item-container {
-    border: 1px solid #ccc;
-    
+    border: 1px solid #000000;
     border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .item-1 {
@@ -76,7 +79,47 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    text-align: center;
+}
+
+.home-post-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.home-post-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    background-color: transparent ;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9); /* Optional: text shadow for better readability */
+}
+
+.home-post-title {
+    margin-bottom: 0;
+}
+
+.home-post-author-and-date {
+    margin-top: 5px;
 }
 
 .home-posts-link-reset {
@@ -88,5 +131,7 @@
     border: 1px solid;
     padding: 5px;
     border-radius: 10px;
+    background-color: white;
 }
+
 

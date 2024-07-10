@@ -261,6 +261,9 @@ const PostView = () => {
                                 </div>
                             </div>
                             <div className="postView-main-text-container">
+                                <div>
+                                    <img className="postView-main-image" src={post.imageURL} alt="post-image" />
+                                </div>
                                 <p className="postView-main-text">{post.text}</p>
                             </div>
                         </div>

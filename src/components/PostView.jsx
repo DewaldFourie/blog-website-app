@@ -238,10 +238,10 @@ const PostView = () => {
                         <span className="postView-return-btn">⬅︎ Back to All Posts</span>
                     </Link>
                 )} 
-                <div className="postView-container">
+                <div className="postView-container" >
                     {post ? (
                         <>
-                        <div className="postView-main-container">
+                        <div className="postView-main-container" >
                             <div className="postView-main-title-container">
                                 <h1 className="postView-main-title-text">{post.title}</h1>
                             </div>

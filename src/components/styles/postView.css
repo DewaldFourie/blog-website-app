@@ -4,7 +4,9 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    
+    background-image: url('/src/assets/post-view-bg.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 .postView-return-container, .postView-return-scrollMax-container {

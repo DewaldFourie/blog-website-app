@@ -6,13 +6,22 @@
     justify-content: center;
     align-items: center;
     height: 93.6vh;
+    background-image: url('/src/assets/about-page-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .about-container {
-    margin: 4rem;
+    margin: 8rem;
     padding: 2rem;
-    background-color: rgb(42, 42, 42);
-    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.737);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7); 
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-info-container {
@@ -22,17 +31,31 @@
     align-items: center;
 }
 
+.about-info-heading {
+
+}
+
+.about-info-subheading {
+    font-size: 20px;
+    margin-top: 2rem;
+}
+
+.about-info-text {
+    text-align: center;
+}
+
 .about-project-layout-header {
     margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
 }
 
 .about-project-layout-container {
     margin-top: 2rem;
     display: flex;
-    width: 100%;
+    width: 80%;
     justify-content: space-around;
     align-items: center;
 }
@@ -56,4 +79,9 @@
 
 .about-project-info-text {
     text-align: center;
+}
+
+.about-project-info-text-link {
+    text-decoration: underline ;
+    color: inherit;
 }

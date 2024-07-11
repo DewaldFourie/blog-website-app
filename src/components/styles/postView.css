@@ -36,9 +36,10 @@
     align-items: center;
     margin-top: 8rem;
     margin-bottom: 5rem;
-    background-color: rgb(221, 226, 231);
+    background-color: rgba(221, 226, 231, 0.385);
     width: 90%;
     min-height: 75vh;
+    border-radius: 15px;
 }
 
 /*  MAIN CONTAINER  */
@@ -52,29 +53,52 @@
 
 .postView-main-title-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .postView-main-title-text {
-    color: rgb(30, 17, 167);
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); 
 }
 
 .postView-main-info-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .postView-main-info-data-container {
     display: flex;
-    gap: 1rem;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 .postView-main-info-data-author {
-
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: center;
 }
 
 .postView-main-info-data-date {
+    font-size: 13px;
+    margin-left: 1rem;
+    margin-bottom: 1px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
 
+.postView-main-info-data-time {
+    font-size: 13px;
+    margin-left: 5px;
+    text-align: left;
+    margin-bottom: 1px;
 }
 
 .postView-main-info-like-container {
@@ -234,7 +258,17 @@
     margin: 2px;
 }
 
+.postView-comment-info-date-time-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .postView-comment-info-date {
+    margin: 0;
+    font-size: small;
+}
+
+.postView-comment-info-time {
     margin: 0;
     font-size: small;
 }

@@ -304,7 +304,15 @@ const PostView = () => {
                                             <div className="postView-comment-info-container">
                                                 <div className="postView-comment-info-text-container">
                                                     <h4 className="postView-comment-info-author">{comment.author}</h4>
-                                                    <span className="postView-comment-info-date">{comment.createdAt}</span>
+                                                    <div className="postView-comment-info-date-time-container">
+                                                        <span className="postView-comment-info-date">{new Date(comment.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</span>
+                                                        <span className="postView-comment-info-time">{new Date(post.createdAt).toLocaleTimeString('en-GB', {
+                                                            hour: '2-digit',
+                                                            minute: '2-digit',
+                                                            hour12: false
+                                                        })}</span>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                             <div className="postView-comment-content-container">

@@ -36,7 +36,7 @@ const Home = () => {
             <div className="home-content">
                 <div className="banner-container">
                     <div className="banner-container-info">
-                        <h1 className="banner-container-text">HOME Banner text</h1>
+                        <h1 className="banner-container-text">The Road less Traveled</h1>
                     </div>
                 </div>
                 <div className="segment-1-container">

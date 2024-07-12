@@ -273,12 +273,12 @@ const PostView = () => {
                         <div className="postView-secondary-container">
                             <div className="postView-comments-input-container">
                                 <form className="postView-comments-input-form" id="comment-input" action="post" onSubmit={handleSubmit}>
-                                    <span className="postView-comments-input-header">Add a Comment</span>
+                                    <span className="postView-comments-input-header">Share your Thoughts:</span>
                                     <input 
                                         name="author" 
                                         id="comment-input" 
                                         type="text" 
-                                        className="comment-username" 
+                                        className="comment-input-box comment-username" 
                                         placeholder="Username" 
                                         value={newComment.author} 
                                         onChange={handleInputChange}
@@ -286,7 +286,7 @@ const PostView = () => {
                                     <textarea 
                                         name="text" 
                                         id="comment-input" 
-                                        className="comment-content" 
+                                        className="comment-input-box comment-content" 
                                         placeholder="Comment"
                                         value={newComment.text}
                                         onChange={handleInputChange}

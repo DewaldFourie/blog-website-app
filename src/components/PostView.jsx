@@ -264,7 +264,9 @@ const PostView = () => {
                                 <div>
                                     <img className="postView-main-image" src={post.imageURL} alt="post-image" />
                                 </div>
-                                <p className="postView-main-text">{post.text}</p>
+                                {post.text.split('\n\n').map((paragraph, index) => (
+                                    <p className="postView-main-text" key={index}>{paragraph}</p>
+                                ))}
                             </div>
                         </div>
                         <div className="postView-container-break"></div>

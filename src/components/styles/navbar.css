@@ -27,7 +27,7 @@
     position: fixed;
     color: white;
     z-index: 2;
-
+    
 }
 
 .container {
@@ -64,6 +64,7 @@
     color: rgb(0, 0, 0);
     text-decoration: none;
     margin: 0 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); /* Optional: text shadow for better readability */
 }
 
 .nav-links.sticky a{
@@ -72,6 +73,10 @@
 
 .nav-links a.active {
     border-bottom: 2px solid #000000;
+}
+
+.nav-links.sticky a.active {
+    border-bottom: 2px solid white;
 }
 
 .admin-site-container {

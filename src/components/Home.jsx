@@ -13,12 +13,29 @@ const fetchPosts = async () => {
         return data.posts;
     } catch (error) {
         console.log(error);
+        return [];
     }
 };
+
+// Function to fetch LATEST posts, this will fetch the last post using the correct route
+const fetchLastPost = async () => {
+    try {
+        const response = await fetch("https://blog-api-app.fly.dev/posts/last/1", { mode: 'cors' });
+        if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data.posts[0]
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+}
 
 const Home = () => {
 
     const [posts, setPosts] = useState([]);
+    const [lastPost, setLastPost] = useState(null);
 
     useEffect(() => {
         // scroll to the top when the component mounts
@@ -28,15 +45,36 @@ const Home = () => {
             const fetchedPosts = await fetchPosts();
             setPosts(fetchedPosts);
         }
-        loadPosts()
+        loadPosts();
+        
+
+        const loadLastPost = async () => {
+            const fetchedLastPost = await fetchLastPost();
+            setLastPost(fetchedLastPost);
+        }
+        loadLastPost();
+        
     }, []);
+
+
 
     return (
         <>
             <div className="home-content">
                 <div className="banner-container">
-                    <div className="banner-container-info">
-                        <h1 className="banner-container-text">The Road less Traveled</h1>
+                    <div className='banner-container-box'>
+                        <div className="banner-container-info">
+                            <h1 className="banner-container-text">THE ROAD LESS TRAVELED</h1>
+                        </div>
+                        <div className="banner-container-btns-div">
+                            
+                            <Link className='banner-container-btns' to={`/posts/${lastPost?._id}`}> 
+                                <span>LATEST POST</span>
+                            </Link>
+                            <Link className='banner-container-btns' to={'/posts'}>
+                                <span>ALL POSTS</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div className="segment-1-container">

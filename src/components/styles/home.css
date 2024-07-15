@@ -57,6 +57,10 @@
     align-items: center;
 }
 
+.banner-container-btns:hover {
+    color: aliceblue;
+}
+
 .segment-1-container {
     background-image: url(/src/assets/segment-1-background.jpg);
     background-size: cover;

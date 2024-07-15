@@ -66,8 +66,7 @@ const Home = () => {
                         <div className="banner-container-info">
                             <h1 className="banner-container-text">THE ROAD LESS TRAVELED</h1>
                         </div>
-                        <div className="banner-container-btns-div">
-                            
+                        <div className="banner-container-btns-div">                          
                             <Link className='banner-container-btns' to={`/posts/${lastPost?._id}`}> 
                                 <span>LATEST POST</span>
                             </Link>

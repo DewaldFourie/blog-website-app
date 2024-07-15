@@ -63,7 +63,7 @@
 .banner-container-btns {
     text-decoration: none;
     color: inherit;
-    border: 1px solid;
+    border: 2px dashed;
     border-radius: 5px;
     padding: 1rem;
     width: 8rem;
@@ -74,7 +74,7 @@
 }
 
 .banner-container-btns:hover {
-    color: aliceblue;
+    border: 2px solid;
 }
 
 .segment-1-container {

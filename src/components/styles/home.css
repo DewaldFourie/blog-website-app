@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'banner-font';
+    src: url('../../assets/Kalam-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'buttons-font';
+    src: url('../../assets/SpecialElite-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'overlay-font';
+    src: url('../../assets/Caveat-Medium.ttf');
+}
+
 .home-content {
     display: flex;
     flex-direction: column;
@@ -37,12 +52,12 @@
 .banner-container-text {
     color: #000000;
     font-size: 40px;
+    font-family: 'banner-font';
 }
 
 .banner-container-btns-div {
     display: flex;
     gap: 2rem;
-    margin-top: 1rem;
 }
 
 .banner-container-btns {
@@ -55,6 +70,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'buttons-font';
 }
 
 .banner-container-btns:hover {
@@ -148,10 +164,12 @@
     background-color: transparent ;
     text-align: center;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9); /* Optional: text shadow for better readability */
+    font-family: 'overlay-font';
 }
 
 .home-post-title {
     margin-bottom: 0;
+    font-size: 35px;
 }
 
 .home-post-date {
@@ -161,6 +179,7 @@
 
 .home-post-author {
     margin-top: 5px;
+    font-size: 25px;
 }
 
 .home-posts-link-reset {
@@ -173,6 +192,8 @@
     padding: 5px;
     border-radius: 5px;
     background-color: white;
+    font-family: 'buttons-font';
+    font-size: 15px;
 }
 
 .home-all-posts-link:hover {

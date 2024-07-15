@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import generateUniqueId from "../lib/userIdUtils";
 import heartInitial from '../assets/heart-initial.png';
 import heartActive from '../assets/heart-active.png';
-
+import loadingIcon from '../assets/icons8-loading.gif';
 
 
 
@@ -235,7 +235,7 @@ const PostView = () => {
             <div className="postView-content">
                 { showReturnButton && (
                     <Link className={!isScrolledToMax ? `postView-return-container` : `postView-return-scrollMax-container` } to={'/posts'}>
-                        <span className="postView-return-btn">⬅︎ Back to All Posts</span>
+                        <span className="postView-return-btn">⬅︎ Back to Posts</span>
                     </Link>
                 )} 
                 <div className="postView-container" >
@@ -331,7 +331,7 @@ const PostView = () => {
                         </>
                     ) : (
                         <div className="loading-post-container">
-                            <span className="loading-post-text">loading post...</span>
+                            <img src={loadingIcon} className="loading-icon" alt="loading..." />
                         </div>
                     )}
                 </div>

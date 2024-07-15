@@ -17,7 +17,7 @@ const About = () => {
                     </div>
                     <div className="about-project-layout-container">
                         <div className="project-layout-item">
-                            <span>Website</span>
+                            <span>WEBSITE</span>
                         </div>
                         <div className="project-layout-item">
                             <span>API</span>

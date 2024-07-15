@@ -13,7 +13,7 @@ const PostItem = ({ post }) => {
                     <h1 className='post-item-main-title'>{post.title}</h1>
                 </div>
                 <div className='post-item-text-container'>
-                    <span className='post-item-text-small'>{post.text.slice(0, 150) + "..." + " " + "[Click to read more]"}</span>
+                    <span className='post-item-text-small'>{post.text.slice(0, 150) + "..."}</span>
                 </div>
                 <div className="post-item-image-container">
                     <img className='post-item-image' src={post.imageURL} alt="post-image" />

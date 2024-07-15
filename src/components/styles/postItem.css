@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'main-font';
+    src: url('../../assets/Caveat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'text-font';
+    src: url('../../assets/Comfortaa-Regular.ttf');
+}
+
+
 .post-item-container {
     display: flex;
     flex-direction: column;
@@ -14,12 +25,18 @@
 
 .post-item-main {
     width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .post-item-main-title {
+    margin-bottom: 0;
     margin-top: 0;
-    margin-bottom: 10px;
     text-align: center;
+    font-family: 'main-font';
 }
 
 .post-item-text-container {
@@ -29,7 +46,9 @@
 }
 
 .post-item-text-small {
-    font-size: 13px;
+    font-size: 12px;
+    font-family: 'text-font';
+    text-align: left;
 }
 
 .post-item-image-container {
@@ -37,11 +56,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 0px;
 }
 
 .post-item-image {
-    height: 10rem;
+    height: 11rem;
     width: 80%;
     border-radius: 8px;
 }
@@ -50,4 +70,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.post-item-secondary-left {
+    font-family: 'main-font';
 }

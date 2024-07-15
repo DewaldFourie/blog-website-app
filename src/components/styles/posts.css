@@ -14,7 +14,6 @@
     width: 90%;
     margin-top: 125px;
     margin-bottom: 125px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,6 +33,10 @@
 
 .loading-container {
     display: flex;
+}
+
+.loading-icon {
+    border-radius: 50%;
 }
 
 .post-item {

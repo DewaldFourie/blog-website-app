@@ -1,8 +1,13 @@
 /* Navbar.css */
 
 @font-face {
-    font-family: 'mainFont';
-    src: url('../../assets/marcelusFont.ttf');
+    font-family: 'brand-name-font';
+    src: url('../../assets/Kalam-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'navbar-font';
+    src: url('../../assets/SpecialElite-Regular.ttf');
 }
 
 .navbar {
@@ -19,7 +24,6 @@
     align-items: center;
     padding: 10px 0;
     transition: all 0.3s ease;
-    font-family: 'mainFont';
 }
 
 .navbar.sticky {
@@ -46,9 +50,9 @@
 
 .brand-name a{
     font-size: 30px;
-    font-weight: bold;
     color: rgb(0, 0, 0);
     text-decoration: none;
+    font-family: 'brand-name-font';
 }
 
 .brand-name.sticky a {
@@ -58,6 +62,7 @@
 .nav-links {
     display: flex;
     justify-content: space-around;
+    font-family: 'navbar-font';
 }
 
 .nav-links a {
@@ -65,6 +70,7 @@
     text-decoration: none;
     margin: 0 20px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); /* Optional: text shadow for better readability */
+
 }
 
 .nav-links.sticky a{
@@ -88,7 +94,13 @@
 .admin-site-login-text {
     background-color: white;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-family: 'navbar-font';
+    padding: 6px;
+}
+
+.admin-site-login-text:hover {
+    cursor: pointer;
 }
 
 .mobile-menu-icon {

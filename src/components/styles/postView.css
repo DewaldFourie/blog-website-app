@@ -156,7 +156,9 @@
 }
 
 .postView-main-info-like-text {
-    align-self: flex-end;
+    margin-top: 5px;
+    align-self: center;
+    font-family: 'main-font';
 }
 
 .postView-main-text-container {
@@ -329,7 +331,8 @@
 
 .postView-comment-info-time {
     margin: 0;
-    font-size: small;
+    margin-top: 1px;
+    font-size: smaller;
 }
 
 .postView-comment-info-like-container {

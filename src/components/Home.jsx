@@ -93,7 +93,7 @@ const Home = () => {
                                         )}
                                         <div className='home-post-overlay'>
                                             <h1 className='home-post-title'>{post.title}</h1>
-                                            <h2 className='home-post-date'>{new Date(post.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</h2>
+                                            <h2 className='home-post-date'>{new Date(post.updatedAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</h2>
                                             <h3 className='home-post-author'>{post.author.username}</h3>
                                         </div>
                                     </Link>

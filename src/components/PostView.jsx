@@ -248,8 +248,8 @@ const PostView = () => {
                             <div className="postView-main-info-container">
                                 <div className="postView-main-info-data-container">
                                     <span className="postView-main-info-data-author">{post.author.username}</span>
-                                    <span className="postView-main-info-data-date">{new Date(post.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</span>
-                                    <span className="postView-main-info-data-time">{new Date(post.createdAt).toLocaleTimeString('en-GB', {
+                                    <span className="postView-main-info-data-date">{new Date(post.updatedAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</span>
+                                    <span className="postView-main-info-data-time">{new Date(post.updatedAt).toLocaleTimeString('en-GB', {
                                         hour: '2-digit',
                                         minute: '2-digit',
                                         hour12: false
@@ -308,7 +308,7 @@ const PostView = () => {
                                                     <h4 className="postView-comment-info-author">{comment.author}</h4>
                                                     <div className="postView-comment-info-date-time-container">
                                                         <span className="postView-comment-info-date">{new Date(comment.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</span>
-                                                        <span className="postView-comment-info-time">{new Date(post.createdAt).toLocaleTimeString('en-GB', {
+                                                        <span className="postView-comment-info-time">{new Date(comment.createdAt).toLocaleTimeString('en-GB', {
                                                             hour: '2-digit',
                                                             minute: '2-digit',
                                                             hour12: false

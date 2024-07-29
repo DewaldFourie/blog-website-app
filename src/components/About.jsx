@@ -27,7 +27,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className='about-project-info-container'>
-                        <span className='about-project-info-text'>Find out more about this specific project on <a className='about-project-info-text-link' href="https://www.theodinproject.com/lessons/nodejs-blog-api">this page</a></span>
+                        <span className='about-project-info-text'>Find out more about this specific project on <a className='about-project-info-text-link' href="https://www.theodinproject.com/lessons/node-path-nodejs-blog-api">this page</a></span>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@ const PostItem = ({ post }) => {
                     <div className="post-item-secondary-left">
                         <span>{post.author.username}</span> 
                         <span> | </span>
-                        <span>{new Date(post.createdAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</span>
+                        <span>{new Date(post.updatedAt).toLocaleDateString('en-GB').replace(/\//g, '-')}</span>
                     </div>
                     <div className="post-item-secondary-right">
                         <span>♥️ {post.likes}</span>

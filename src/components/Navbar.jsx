@@ -53,7 +53,7 @@ const Navbar = () => {
                 </div>
                 <div>
                     <div className="admin-site-container">
-                        <span className="admin-site-login-text">Admin Login</span>
+                        <a href="https://blog-cms-4bat6n6ee-dewaldfouries-projects.vercel.app" target="_blank" className="admin-site-login-text">Admin Login</a>
                     </div>
                 </div>
             </div>

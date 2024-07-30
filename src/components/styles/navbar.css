@@ -97,6 +97,8 @@
     border-radius: 5px;
     font-family: 'navbar-font';
     padding: 6px;
+    text-decoration: none;
+    color: black;
 }
 
 .admin-site-login-text:hover {

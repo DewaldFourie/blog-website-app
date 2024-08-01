@@ -1,11 +1,7 @@
-import Posts from './Posts';
+import PropTypes from 'prop-types';
 import './styles/postItem.css';
 
-
 const PostItem = ({ post }) => {
-    
-
-
     return (
         <>
             <div className="post-item-container">
@@ -30,7 +26,20 @@ const PostItem = ({ post }) => {
                 </div>
             </div>
         </>
-    )
+    );
 }
+
+PostItem.propTypes = {
+    post: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        imageURL: PropTypes.string,
+        author: PropTypes.shape({
+            username: PropTypes.string.isRequired,
+        }).isRequired,
+        updatedAt: PropTypes.string.isRequired,
+        likes: PropTypes.number.isRequired,
+    }).isRequired,
+};
 
 export default PostItem;

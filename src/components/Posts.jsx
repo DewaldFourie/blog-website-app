@@ -1,6 +1,6 @@
 import './styles/posts.css'
 import PostItem from './PostItem'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import loadingIcon from '../assets/icons8-loading.gif';
 

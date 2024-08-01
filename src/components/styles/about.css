@@ -105,3 +105,98 @@
     text-decoration: underline ;
     color: inherit;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .about-container {
+        margin: 6rem;
+        margin-top: 9rem;
+    }
+
+    .about-info-text, .about-project-layout-container {
+        width: 90%;
+    }
+
+    .project-layout-item {
+        width: 10rem;
+        height: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-container {
+        margin: 4rem;
+        margin-top: 7rem;
+    }
+
+    .about-info-heading {
+        font-size: 1.5rem;
+    }
+
+    .about-info-subheading {
+        font-size: 1.2rem;
+    }
+
+    .about-project-layout-header {
+        font-size: 20px;
+    }
+
+    .project-layout-item {
+        width: 9rem;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        margin: 3rem;
+        margin-top: 5rem;
+        padding: 1.5rem;
+    }
+
+    .about-info-heading {
+        font-size: 1.2rem;
+    }
+
+    .about-info-subheading {
+        font-size: 1rem;
+    }
+
+    .about-info-text, .about-project-layout-container {
+        width: 100%;
+    }
+
+    .about-project-layout-header {
+        font-size: 18px;
+    }
+
+    .project-layout-item {
+        width: 8rem;
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-container {
+        margin: 2rem;
+        margin-top: 3rem;
+        padding: 1rem;
+    }
+
+    .about-info-heading {
+        font-size: 1rem;
+    }
+
+    .about-info-subheading {
+        font-size: 0.9rem;
+    }
+
+    .about-project-layout-header {
+        font-size: 16px;
+    }
+
+    .project-layout-item {
+        width: 7rem;
+        height: 2rem;
+    }
+}

@@ -4,6 +4,10 @@ TravelBLOG is a blog website that shows blog posts from registered authors about
 
 ## [DEMO- (click here to run the demo)](https://blog-website-app-red.vercel.app)
 
+## Preview
+
+<img width="1422" alt="shopping-app-ss" src="">
+
 ## Features
 
 - **User Friendly:** Easy-to-navigate user interface.

@@ -22,7 +22,7 @@
 .banner-container {
     height: 100vh;
     width: 100%;
-    background-image: url(https://gtwallpaper.org/sites/default/files/wallpaper/243629/water-nature-wallpapers-243629-2096976-434566.png);
+    background-image: url(/src/assets/blogBack.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    bottom: 25%;
+    bottom: 30%;
 }
 
 .banner-container-info {
@@ -51,7 +51,7 @@
 
 .banner-container-text {
     color: #000000;
-    font-size: 40px;
+    font-size: 60px;
     font-family: 'banner-font';
 }
 

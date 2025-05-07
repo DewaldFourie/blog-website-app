@@ -121,26 +121,28 @@
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        flex-direction: column;
-        gap: 5px;
         position: absolute;
-        top: 4.25rem;
+        top: 1.8rem;
         left: 0;
         right: 0;
         text-align: center;
         height: 5.5rem;
-        background-color: rgba(255, 255, 255, 0.365);
-        border-radius: 10px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
         margin: 0.2rem;
     }
 
     .nav-links.sticky {
-        background-color: #28282B;
+        background-color: #000000e2;
+        height: 1.8rem;
+        top: 4rem;
     }
 
     .nav-links a.active {
         border-bottom: none;
-        text-decoration: underline;
+        
     }
 
     .brand-name {
@@ -157,6 +159,11 @@
     
     .nav-links.mobile {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        justify-self: center;
+        padding: 5px;
     }
 
     .mobile-menu-icon {
@@ -177,5 +184,9 @@
 
     .mobile-menu-icon.open .bar:last-child {
         transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .admin-site-container {
+        width: 8rem;
     }
 }

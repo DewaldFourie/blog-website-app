@@ -279,6 +279,10 @@
 }
 
 @media (max-width: 576px) {
+    .segment-1-container {
+        height: 95vh;
+    }
+
     .banner-container-text {
         font-size: 20px;
     }
@@ -291,19 +295,31 @@
     .home-posts-container {
         margin-left: 1rem;
         margin-right: 1rem;
-        grid-template-rows: repeat(3, 120px);
+        grid-template-rows: repeat(3, 200px);
+    }
+
+    .home-post-item-container {
+        height: 12rem;
     }
 
     .home-post-title {
-        font-size: 18px;
+        font-size: 24px;
     }
 
     .home-post-author {
-        font-size: 14px;
+        font-size: 18px;
+    }
+
+    .home-posts-link-container {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
     }
 
     .home-all-posts-link {
         font-size: 12px;
         padding: 3px;
+
     }
 }

@@ -40,7 +40,7 @@
 }
 
 .post-item-text-container {
-    text-align: left;
+    text-align: center;
     flex-grow: 1; /* Allow the text container to grow and fill the available space */
     overflow: hidden; /* Ensure text doesn't overflow */
 }
@@ -78,4 +78,15 @@
 
 .post-item-secondary-right {
     font-family: 'main-font';
+}
+
+@media (max-width: 600px) {
+    .post-item-text-small {
+        text-align: center;
+    }
+
+    .post-item-image-container {
+        text-align: center;
+    }
+    
 }

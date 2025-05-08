@@ -385,3 +385,95 @@ padding: 20px;
     align-items: center;
     min-height: 75vh;
 }
+
+@media (max-width: 600px) {
+    
+    .postView-main-title-text {
+        font-size: 26px;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .postView-main-info-container {
+        margin-bottom: 0;
+        display: flex;
+    }
+
+    .postView-main-info-data-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .postView-main-info-data-author {
+        margin-bottom: 0;
+        align-items: flex-end;
+        justify-content: flex-end;
+        font-size: 20px;
+    }
+
+    .postView-main-info-data-date {
+        font-size: 10px;
+        margin-left: 0;
+    }
+
+    .postView-main-info-data-time {
+        display: none;
+    }
+
+    .postView-main-info-like-btn {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .postView-main-image {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .postView-comments-input-form {
+        width: 100%;
+    }
+
+    .postView-comments-input-header {
+        width: 100%;
+        text-align: center;
+    }
+
+    .comment-input-box.comment-username {
+        width: 50%;
+        align-self: center;
+    }
+
+    .comment-input-box.comment-content {
+        width: 70%;
+        align-self: center;
+    }
+
+    .comment-submit-btn {
+        align-self: center;
+    }
+
+    .postView-comments-content-container {
+        width: 90%;
+    }
+
+    .postView-comment-info-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .postView-comment-info-text-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: end;
+    }
+
+    .postView-comment-info-author {
+        font-size: 18px;
+    }
+}

@@ -81,12 +81,21 @@
 }
 
 @media (max-width: 600px) {
+
+    .post-item-main-title {
+        font-size: 26px;
+    }
+
     .post-item-text-small {
         text-align: center;
     }
 
     .post-item-image-container {
         text-align: center;
+    }
+
+    .post-item-container {
+        width: 370px;
     }
     
 }

@@ -295,11 +295,11 @@
     .home-posts-container {
         margin-left: 1rem;
         margin-right: 1rem;
-        grid-template-rows: repeat(3, 200px);
+        grid-template-rows: repeat(3, 150px);
     }
 
     .home-post-item-container {
-        height: 11rem;
+        height: 8rem;
     }
 
     .home-post-title {

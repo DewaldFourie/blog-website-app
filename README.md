@@ -6,8 +6,7 @@ TravelBLOG is a blog website that shows blog posts from registered authors about
 
 ## Preview
 
-<img width="1422" alt="blog-preview" src="https://github.com/user-attachments/assets/a2fd4427-f98d-4c7e-bdfc-b21214bd6b98
-">
+<img width="1422" alt="blog-preview" src="https://github.com/user-attachments/assets/a2fd4427-f98d-4c7e-bdfc-b21214bd6b98">
 
 ## Features
 

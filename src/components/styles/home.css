@@ -76,7 +76,7 @@
 }
 
 .segment-1-container {
-    background-image: url(/src/assets/segment-1-background.jpg);
+    background-image: url(/src/assets/clearsky.jpg);
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -186,10 +186,11 @@
 }
 
 .home-all-posts-link {
-    border: 1px solid;
+    border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.618);
+    color: white;
     font-family: 'buttons-font';
     font-size: 15px;
 }

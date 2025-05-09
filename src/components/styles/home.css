@@ -67,9 +67,7 @@
     border-radius: 5px;
     padding: 1rem;
     width: 8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     font-family: 'buttons-font';
 }
 
@@ -283,8 +281,30 @@
         height: 95vh;
     }
 
+    .banner-container {
+        background-image: url(/src/assets/man-standing.jpg);
+    }
+
+    .banner-container-box {
+        bottom: 55%;
+    }
+
+    .banner-container-btns-div {
+        flex-direction: row;
+    }
+
+    a.banner-container-btns {
+        width: 8rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border: 1px dotted;
+        font-size: 14px;
+        
+    }
+
     .banner-container-text {
-        font-size: 20px;
+        font-size: 28px;
     }
 
     .banner-container-btns {

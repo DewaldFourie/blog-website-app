@@ -31,11 +31,12 @@
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.704);
+    color: rgb(255, 255, 255);
     transition: bottom 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
     font-family: 'buttons-font';
+    
 }
 
 .postView-return-container:hover, .postView-return-scrollMax-container:hover {
@@ -475,5 +476,9 @@ padding: 20px;
 
     .postView-comment-info-author {
         font-size: 18px;
+    }
+
+    .postView-return-container {
+        display: none;
     }
 }

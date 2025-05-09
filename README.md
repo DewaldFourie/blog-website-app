@@ -14,12 +14,14 @@ TravelBLOG is a blog website that shows blog posts from registered authors about
 - **Modern Design:** Sleek and Modern design contributing to user experience.
 - **Cookie Functionality:** User management via cookies and unique identifiers.
 - **Functionally Interactive:** Users can add comments and likes to posts.
+- **CMS Site Control:** Admins can create new Authors or Posts and delete Posts & comments.
+- **Fully Mobile Responsive:** The Blog Website is create fully Responsive for Mobile Devices.
 
 ## Tech Stack
 
 - **Frontend:**
   - HTML
-  - Vanilla CSS
+  - CSS
   - Bootstrap
   - JavaScript
   - REACT
@@ -29,6 +31,8 @@ TravelBLOG is a blog website that shows blog posts from registered authors about
   - Node.js
   - Mongoose
   - MongoDB
+  - Web Cookies
+  - Live User Tracking
 
 - **Development Tools:**
   - ESLint

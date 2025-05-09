@@ -52,8 +52,8 @@ const Navbar = () => {
                     <div className="bar"></div>
                 </div>
                 <div>
-                    <div className="admin-site-container">
-                        <a href="https://blog-cms-4bat6n6ee-dewaldfouries-projects.vercel.app" target="_blank" className="admin-site-login-text">Admin Login</a>
+                    <div className={`admin-site-container ${isNavbarSticky ? 'sticky' : ''}`}>
+                        <a href="https://blog-cms-4bat6n6ee-dewaldfouries-projects.vercel.app" target="_blank" className={`admin-site-login-text ${isNavbarSticky ? 'sticky' : ''}`}>Authors Login</a>
                     </div>
                 </div>
             </div>

@@ -283,7 +283,7 @@
 
     .banner-container {
         background-image: url(/src/assets/man-standing.jpg);
-        background-size:contain;
+        background-size:70vh;
         background-position: top;
         background-attachment: fixed;
         background-repeat: no-repeat;

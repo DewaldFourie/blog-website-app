@@ -247,6 +247,9 @@
     padding: 5px;
     border-radius: 5px;
     font-family: 'buttons-font';
+    background-color: rgba(0, 0, 0, 0.729);
+    color: white;
+    border: 1px solid black;
 }
 
 .comment-submit-btn:hover {
@@ -367,6 +370,9 @@ padding: 20px;
     width: 6rem;
     border-radius: 5px;  
     font-family: 'buttons-font';
+    background-color: rgba(0, 0, 0, 0.711);
+    color: white;
+    border: 1px solid black;
 }
 
 .postView-footer-btn:hover{
